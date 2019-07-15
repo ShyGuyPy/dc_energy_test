@@ -1,0 +1,27 @@
+#create table
+CREATE TABLE inflation_data (
+    Year varchar,
+    Jan integer,
+    Feb integer,
+    March integer,
+    April integer,
+    June integer,
+    July integer,
+    August integer,
+    September integer,
+    October integer,
+    November integer,
+    December integer
+);
+
+I've pushed data to sqlite and postgres servers, but never from a pandas dataframe(I usually
+handle data in R.  As such, I don't know the next step off hand.
+It would probably look something like the function below which I have never used, and pulled
+from https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_sql.html
+
+DataFrame.to_sql(name, con, schema=None, if_exists='fail', index=True, index_label=None, chunksize=None, dtype=None, method=None)[source]
+
+#get the averages in descending order
+SELECT Year, Ave
+FROM inflation_data
+ORDER BY Ave DESC;
